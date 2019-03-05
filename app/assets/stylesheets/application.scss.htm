@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://wonderwall.hatenablog.com/entry/2015/08/08/140517 -->
+<html lang="ja" data-admin-domain="//blog.hatena.ne.jp" data-author="wonder-wall" data-avail-langs="ja en" data-blog="wonderwall.hatenablog.com" data-blog-host="wonderwall.hatenablog.com" data-blog-is-public="1" data-blog-name="もた日記" data-blog-owner="wonder-wall" data-blog-uri="https://wonderwall.hatenablog.com/" data-blog-uuid="8454420450104208693" data-blogs-uri-base="https://wonderwall.hatenablog.com" data-brand="pro" data-data-layer="{&quot;hatenablog&quot;:{&quot;admin&quot;:{},&quot;analytics&quot;:{&quot;separated_property_id&quot;:&quot;UA-29716941-26&quot;,&quot;brand_property_id&quot;:&quot;&quot;,&quot;property_id&quot;:&quot;UA-42909988-3&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;},&quot;blog&quot;:{&quot;name&quot;:&quot;\u3082\u305f\u65e5\u8a18&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;owner_name&quot;:&quot;wonder-wall&quot;,&quot;disable_ads&quot;:&quot;pro&quot;,&quot;lang&quot;:&quot;ja&quot;,&quot;is_sleeping&quot;:&quot;false&quot;,&quot;uri&quot;:&quot;https://wonderwall.hatenablog.com/&quot;,&quot;enable_ads&quot;:&quot;false&quot;,&quot;enable_keyword_link&quot;:&quot;false&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;is_public&quot;:&quot;true&quot;},&quot;permalink_entry&quot;:{&quot;date&quot;:&quot;2015-08-08&quot;,&quot;categories&quot;:&quot;Ruby on Rails&quot;,&quot;title&quot;:&quot;Rails\u30e1\u30e2(5) : Bootswatch(Bootstrap)\u3067\u898b\u305f\u76ee\u3092\u5909\u66f4\u3059\u308b&quot;,&quot;hour&quot;:&quot;14&quot;,&quot;uri&quot;:&quot;https://wonderwall.hatenablog.com/entry/2015/08/08/140517&quot;,&quot;author_name&quot;:&quot;wonder-wall&quot;},&quot;router_type&quot;:&quot;blogs&quot;,&quot;brand&quot;:&quot;pro&quot;,&quot;pro&quot;:&quot;pro&quot;,&quot;brand_tracking_category&quot;:&quot;pro&quot;,&quot;page_id&quot;:&quot;entry&quot;}}" data-device="pc" data-dont-recommend-pro="false" data-global-domain="https://hatenablog.com" data-globalheader-color="b" data-globalheader-type="pc" data-has-touch-view="1" data-hide-header="1" data-no-suggest-touch-view="1" data-page="entry" data-parts-domain="https://hatenablog-parts.com" data-plus-available="1" data-pro="true" data-router-type="blogs" data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218" data-sentry-sample-rate="0.1" data-static-domain="https://cdn.blog.st-hatena.com" data-version="71621a2fa18e316459fcc4055ba44033" itemscope="" itemtype="http://schema.org/Article" data-initial-state="{}"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./application.scss_files/recaptcha__ja.js"></script><script async="" src="./application.scss_files/notices.count.json"></script><script src="./application.scss_files/sdk.js" async=""></script><script id="facebook-jssdk" src="./application.scss_files/sdk(1).js"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+
+
+
+  
+
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11">
+  <title>Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する - もた日記</title>
+
+  
+  <link rel="canonical" href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517">
+
+
+
+  
+  
+
+<meta itemprop="name" content="Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する - もた日記">
+
+  <meta itemprop="image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/w/wonder-wall/20160924/20160924124455.png">
+
+
+  <meta property="og:title" content="Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する - もた日記">
+<meta property="og:type" content="article">
+  <meta property="og:url" content="https://wonderwall.hatenablog.com/entry/2015/08/08/140517">
+
+  <meta property="og:image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/w/wonder-wall/20160924/20160924124455.png">
+
+    <meta property="og:description" content="手っ取り早く見た目を良くするならBootstrapだが、今回は色々なテーマが選択できるBootswatchを使用してみる。 Bootswatch: Free themes for Bootstrap RailsでBootswatchを使うgemとしては、 GitHub - maxim/bootswatch-rails: Bootswatches converted to SCSS ready to use in Rails asset pipeline. GitHub - scottvrosenthal/twitter-bootswatch-rails: twitter bootstrap r…">
+<meta property="og:site_name" content="もた日記">
+
+  <meta property="article:published_time" content="1439010317">
+
+    <meta property="article:tag" content="Ruby on Rails">
+      <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cdn-ak.f.st-hatena.com/images/fotolife/w/wonder-wall/20160924/20160924124455.png">  <meta name="twitter:title" content="Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する - もた日記">    <meta name="twitter:description" content="手っ取り早く見た目を良くするならBootstrapだが、今回は色々なテーマが選択できるBootswatchを使用してみる。 Bootswatch: Free themes for Bootstrap RailsでBootswatchを使うgemとしては、 GitHub - maxim/bootswatch-rails:…">  <meta name="twitter:app:name:iphone" content="はてなブログアプリ">
+  <meta name="twitter:app:id:iphone" content="583299321">
+  <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=https%3A%2F%2Fwonderwall.hatenablog.com%2Fentry%2F2015%2F08%2F08%2F140517">
+  
+    <meta name="description" content="手っ取り早く見た目を良くするならBootstrapだが、今回は色々なテーマが選択できるBootswatchを使用してみる。 Bootswatch: Free themes for Bootstrap RailsでBootswatchを使うgemとしては、 GitHub - maxim/bootswatch-rails: Bootswatches converted to SCSS ready to use in Rails asset pipeline. GitHub - scottvrosenthal/twitter-bootswatch-rails: twitter bootstrap r…">
+    <meta name="google-site-verification" content="Rcsq9quvgX4Gk90Ar581FVjXeg7SG1CxcFzCMfDAWds">
+    <meta name="msvalidate.01" content="60D2C51177B6E19F6A0497A6E4CCF540">
+
+
+  
+<script type="text/javascript" async="" src="./application.scss_files/analytics.js"></script><script src="./application.scss_files/osd.js"></script><script src="./application.scss_files/ca-pub-4207209214165713.js"></script><script async="" src="./application.scss_files/gtm.js"></script><script id="embed-gtm-data-layer-loader" data-data-layer-page-specific="{&quot;hatenablog&quot;:{&quot;blogs_permalink&quot;:{&quot;blog_hide_afc_field&quot;:&quot;false&quot;,&quot;entry_afc_issued&quot;:&quot;false&quot;,&quot;is_author_pro&quot;:&quot;true&quot;,&quot;blog_afc_issued&quot;:&quot;false&quot;,&quot;blog_hide_afc_func&quot;:&quot;true&quot;,&quot;brand_hide_afc&quot;:&quot;false&quot;,&quot;is_blog_sleeping&quot;:&quot;false&quot;,&quot;blog_struct_hide_afc&quot;:&quot;true&quot;,&quot;has_related_entries_with_elasticsearch&quot;:&quot;true&quot;}}}">
+(function() {
+  function loadDataLayer(elem, attrName) {
+    if (!elem) { return {}; }
+    var json = elem.getAttribute(attrName);
+    if (!json) { return {}; }
+    return JSON.parse(json);
+  }
+
+  var globalVariables = loadDataLayer(
+    document.documentElement,
+    'data-data-layer'
+  );
+  var pageSpecificVariables = loadDataLayer(
+    document.getElementById('embed-gtm-data-layer-loader'),
+    'data-data-layer-page-specific'
+  );
+
+  var variables = [globalVariables, pageSpecificVariables];
+
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
+
+  for (var i = 0; i < variables.length; i++) {
+    window.dataLayer.push(variables[i]);
+  }
+})();
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4CXTW');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+  <link rel="shortcut icon" href="https://cdn.image.st-hatena.com/image/favicon/482ff254985ae25195b2f39cb444f82ab514ebdb/version=1/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fcustom_blog_icon%2F110421209%2F1514233586977512">
+<link rel="icon" sizes="192x192" href="https://cdn.image.st-hatena.com/image/square/47dfcf23c8432b2aca09f13bfbed395ae469da19/backend=imagemagick;height=192;version=1;width=192/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fcustom_blog_icon%2F110421209%2F1514233586977512">
+
+  
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://wonderwall.hatenablog.com/feed">
+<link rel="alternate" type="application/rss+xml" title="RSS2.0" href="https://wonderwall.hatenablog.com/rss">
+<link rel="alternate" type="application/json+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwonderwall.hatenablog.com%2Fentry%2F2015%2F08%2F08%2F140517&amp;format=json" title="oEmbed Profile of Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する">
+<link rel="alternate" type="text/xml+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwonderwall.hatenablog.com%2Fentry%2F2015%2F08%2F08%2F140517&amp;format=xml" title="oEmbed Profile of Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する">
+  
+  <link rel="author" href="http://www.hatena.ne.jp/wonder-wall/">
+
+  
+
+
+  
+    <link rel="stylesheet" type="text/css" href="./application.scss_files/blog.css">
+
+    
+  <link rel="stylesheet" type="text/css" href="./application.scss_files/c2bf873de97d661618005dfd1e776cc8c4749ac3">
+  
+
+  
+
+  
+<script> </script>
+
+  
+<style>
+  div#google_afc_user,
+  div.google-afc-user-container,
+  div.google_afc_image,
+  div.google_afc_blocklink {
+      display: block !important;
+  }
+</style>
+
+
+  
+
+  <script async="" src="./application.scss_files/f(2).txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4207209214165713",
+          enable_page_level_ads: true
+     });
+</script>
+<link rel="preload" href="./application.scss_files/f(3).txt" as="script"><script type="text/javascript" src="./application.scss_files/f(3).txt"></script><link rel="preload" href="./application.scss_files/f(4).txt" as="script"><script type="text/javascript" src="./application.scss_files/f(4).txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190214/r20190131/show_ads_impl.js" as="script"><script charset="utf-8" src="./application.scss_files/button.dd024c345fc26f7c7a8d9938b67e5d3d.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style data-styled-components=""></style><script src="./application.scss_files/entries.json" type="text/javascript"></script></head>
+
+  <body class="page-entry enable-top-editarea category-Ruby-on-Rails globalheader-off">
+    
+    <div id="header-container">
+     <div id="sp-suggest" style="display: none;"><a id="sp-suggest-link" href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517#">スマートフォン用の表示で見る</a></div>
+    </div>
+
+    <div id="globalheader-container" data-brand="hatenablog" style="display: none;">
+  <iframe id="globalheader" height="37" frameborder="0" allowtransparency="true" src="./application.scss_files/saved_resource.html"></iframe>
+</div>
+
+
+    <div id="container">
+      <div id="container-inner">
+        <header id="blog-title" data-brand="hatenablog">
+  <div id="blog-title-inner">
+    <div id="blog-title-content">
+      <h1 id="title"><a href="https://wonderwall.hatenablog.com/">もた日記</a></h1>
+      
+        <h2 id="blog-description">くだらないことを真面目にやる</h2>
+      
+    </div>
+  </div>
+</header>
+
+        
+  <div id="top-editarea">
+    <div id="trigger-point">
+</div>
+<div id="global-menu" class="fixed">
+    <div id="mobile-head">
+        <div id="nav-toggle">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <ul class="global-menu-list">
+        <li><a href="http://wonderwall.hatenablog.com/">Home</a></li>
+        <li><a href="http://wonderwall.hatenablog.com/tools">便利ツール</a></li>
+        <li><a href="http://wonderwall.hatenablog.com/archive/category/Python">Python</a></li>
+        <li><a href="http://wonderwall.hatenablog.com/archive/category/Django">Django</a></li>
+        <li><a href="http://wonderwall.hatenablog.com/archive/category/Vim">Vim</a></li>
+    </ul>
+</div>
+<script src="./application.scss_files/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+$(function (){
+    // 変数に代入
+    var $nav = $('#global-menu');
+    var $content = $('#content');
+    var $offsetTop = $('#trigger-point').offset().top;
+    // 固定メニューの設定
+    function fixedNav() {
+        if($(window).scrollTop() > $offsetTop){
+            $nav.addClass('fixed');
+        } else {
+            $nav.removeClass('fixed');
+        }
+    };
+    $(window).scroll(fixedNav);
+    $('body').on('touchmove', fixedNav);
+    // Toggle メニューの設定
+    $('#nav-toggle').click(function (){
+        $nav.toggleClass('open');
+    });
+    $('#content').click(function (){
+        if($nav.hasClass('open')){
+            $nav.removeClass('open');
+        }
+    })
+});
+</script>
+  </div>
+
+
+        
+    <div id="top-box">
+    <div class="breadcrumb" data-test-id="breadcrumb">
+      <div class="breadcrumb-inner">
+        <a class="breadcrumb-link" href="https://wonderwall.hatenablog.com/">
+          <span>トップ</span>
+        </a>          <span class="breadcrumb-gt">
+            &gt;
+          </span>          <span class="breadcrumb-child">              <a class="breadcrumb-child-link" href="https://wonderwall.hatenablog.com/archive/category/Ruby%20on%20Rails">
+                <span>Ruby on Rails</span>
+              </a>          </span>            <span class="breadcrumb-gt">
+              &gt;
+            </span>          <span class="breadcrumb-child">              <span>Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する</span>          </span>      </div>
+    </div>
+  </div>
+  <script type="application/ld+json" class="test-breadcrumb-json-ld">
+    {"@type":"BreadcrumbList","@context":"http://schema.org","itemListElement":[{"@type":"ListItem","item":{"@id":"https://wonderwall.hatenablog.com/","name":"トップ"},"position":1},{"@type":"ListItem","item":{"@id":"https://wonderwall.hatenablog.com/archive/category/Ruby%20on%20Rails","name":"Ruby on Rails"},"position":2}]}
+  </script>
+
+
+        
+
+
+
+
+<div id="content" class="hfeed">
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+          
+
+
+          
+  
+  <!-- google_ad_section_start -->
+  <!-- rakuten_ad_target_begin -->
+  
+  
+  
+
+  
+
+  
+    
+      
+        <article class="entry hentry js-entry-article date-first autopagerize_page_element chars-800 words-100 mode-hatena entry-odd" id="entry-8454420450104628740" data-keyword-campaign="" data-uuid="8454420450104628740" data-publication-type="entry">
+  <div class="entry-inner">
+    <header class="entry-header">
+  
+    <div class="date entry-date first">
+    <a href="https://wonderwall.hatenablog.com/archive/2015/08/08" rel="nofollow">
+      <time pubdate="" datetime="2015-08-08T05:05:17Z" title="2015-08-08T05:05:17Z">
+        <span class="date-year">2015</span><span class="hyphen">-</span><span class="date-month">08</span><span class="hyphen">-</span><span class="date-day">08</span>
+      </time>
+    </a>
+  </div>
+  <h1 class="entry-title">
+  <a href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517" class="entry-title-link bookmark">Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する</a>
+</h1>
+
+  
+  
+
+  <div class="entry-categories categories">
+    
+    <a href="https://wonderwall.hatenablog.com/archive/category/Ruby%20on%20Rails" class="entry-category-link category-Ruby on Rails">Ruby on Rails</a>
+    
+  </div>
+
+
+  
+  <div class="customized-header">
+    <div class="entry-header-html"><script async="" src="./application.scss_files/f(2).txt"></script>
+<!-- unit01 -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-4207209214165713" data-ad-slot="1542554381" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:680px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:680px;background-color:transparent;"><iframe width="680" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:680px;height:60px;" src="./application.scss_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+  </div>
+
+
+  
+
+</header>
+
+    
+
+    <div class="entry-content">
+  
+    <p>手っ取り早く見た目を良くするならBootstrapだが、今回は色々なテーマが選択できるBootswatchを使用してみる。</p>
+
+<ul>
+<li><a href="https://bootswatch.com/">Bootswatch: Free themes for Bootstrap</a></li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="./application.scss_files/20150805234534.png" alt="f:id:wonder-wall:20150805234534p:plain" title="f:id:wonder-wall:20150805234534p:plain" class="hatena-fotolife" itemprop="image"></span></p><p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a>でBootswatchを使うgemとしては、</p>
+
+<ul>
+<li><a href="https://github.com/maxim/bootswatch-rails">GitHub - maxim/bootswatch-rails: Bootswatches converted to SCSS ready to use in Rails asset pipeline.</a></li>
+<li><a href="https://github.com/scottvrosenthal/twitter-bootswatch-rails">GitHub - scottvrosenthal/twitter-bootswatch-rails: twitter bootstrap rails gem that allows easy customization of bootstrap's less and javascript components</a></li>
+</ul><p>があるみたいだが、Star数などの多い<code>maxim/bootswatch-rails</code>を使用してみる。</p><p>READMEを見てみると、</p>
+
+<ul>
+<li><a href="https://github.com/twbs/bootstrap-sass">GitHub - twbs/bootstrap-sass: Official Sass port of Bootstrap 2 and 3.</a></li>
+</ul><p>が必要のようなので、まずこれを使えるようにする。<br>
+<br>
+</p>
+
+<div class="section">
+    <h3>bootstrap-sass</h3>
+    <p></p><hr><p></p><p><code>Gemfile</code>に<code>bootstrap-sass</code>を追加して<code>bundle install</code>する。<code>sass-rails</code>も必要らしいがデフォルトで記述があるので追加は不要。</p>
+<pre class="code" data-lang="" data-unlink="">gem 'bootstrap-sass', '~&gt; 3.3.5'</pre><p><code>bootstrap-sass</code>では拡張子が<code>.scss</code>の<code>application.scss</code>を編集するため、下記コマンドでリネームする。</p>
+<pre class="code" data-lang="" data-unlink="">$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</pre><p>次に<code>application.scss</code>の</p>
+<pre class="code" data-lang="" data-unlink=""> *= require_tree .
+ *= require_self</pre><p>を削除して、かわりに</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">// <span class="synConstant">"bootstrap-sprockets"</span> must be imported before <span class="synConstant">"bootstrap"</span> and <span class="synConstant">"bootstrap/variables"</span>
+<span class="synComment">@import</span> <span class="synConstant">"bootstrap-sprockets"</span>;
+<span class="synComment">@import</span> <span class="synConstant">"bootstrap"</span>;
+</pre><p>を追加する。</p><p>続いて、<a class="keyword" href="http://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>の機能も使用するため<code>app/assets/javascripts/application.js</code>の<code>jquery</code>より後ろに<code>bootstrap-sprockets</code>を追加する。</p>
+<pre class="code" data-lang="" data-unlink="">//= require jquery
+//= require bootstrap-sprockets</pre><p>これで<code>bootstrap-sass</code>の設定は完了。</p>
+
+</div>
+<div class="section">
+    <h3>bootswatch-<a class="keyword" href="http://d.hatena.ne.jp/keyword/rails">rails</a></h3>
+    <p></p><hr><p></p><p><code>Gemfile</code>に<code>bootswatch-rails</code>を追加して<code>bundle install</code>する。</p>
+<pre class="code" data-lang="" data-unlink="">gem 'bootswatch-rails'</pre><p>そして<code>application.scss</code>を以下のように編集する。ここで使用するテーマ名を選択するが、READMEにある<code>Cerulean</code>を試すことにする。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">// Example using <span class="synConstant">'Cerulean'</span> bootswatch
+
+//Import bootstrap-sprockets
+<span class="synComment">@import</span> <span class="synConstant">"bootstrap-sprockets"</span>;
+
+// Import cerulean variables
+<span class="synComment">@import</span> <span class="synConstant">"bootswatch/cerulean/variables"</span>;
+
+// Then bootstrap itself
+<span class="synComment">@import</span> <span class="synConstant">"bootstrap"</span>;
+
+// Bootstrap <span class="synStatement">body</span> padding for fixed navbar
+<span class="synStatement">body</span> <span class="synIdentifier">{</span> <span class="synType">padding-top</span>: <span class="synConstant">60px</span>; <span class="synIdentifier">}</span>
+
+// And finally bootswatch <span class="synStatement">style</span> itself
+<span class="synComment">@import</span> <span class="synConstant">"bootswatch/cerulean/bootswatch"</span>;
+
+// Whatever application styles you have go last
+<span class="synComment">@import</span> <span class="synConstant">"base"</span>;
+</pre><p>編集後サーバーを再起動してアクセスしてみるが、下記エラーが表示されてうまくいかない。</p>
+<pre class="code" data-lang="" data-unlink="">ActionView::Template::Error (File to import not found or unreadable: base.
+Load paths:
+　…省略…</pre><p>調べたところ最後の<code>@import "base";</code>は追加したいスタイルがなければ不要なので<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%E1%A5%F3%A5%C8%A5%A2%A5%A6%A5%C8">コメントアウト</a>する。<br>
+これで<code>bootswatch-rails</code>の設定は完了。</p>
+
+</div>
+<div class="section">
+    <h3>ビューの編集</h3>
+    <p></p><hr><p></p><p>Bootswatchが適用されているか確認するためにビューを編集する。<br>
+最初に<code>app/views/layouts/application.html.erb</code>の<code>body</code>タグ内を編集してNavbarを追加する。</p>
+<pre class="code lang-html" data-lang="html" data-unlink="">　…省略…
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"navbar navbar-default navbar-fixed-top"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"navbar-header"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;%=</span><span class="synConstant"> link_to</span><span class="synIdentifier"> </span><span class="synConstant">'Billboard'</span><span class="synIdentifier">, root_path, </span><span class="synType">class</span><span class="synIdentifier">: </span><span class="synConstant">'navbar-brand'</span><span class="synIdentifier"> %&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;%=</span><span class="synConstant"> yield</span><span class="synIdentifier"> %&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+　…省略…
+</pre><p>次に<code>app/views/songs/index.html.erb</code>の<code>table</code>タグに<code>class</code>属性を追加する。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"table table-striped table-hover"</span><span class="synIdentifier">&gt;</span>
+　…省略…
+<span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+</pre><p>これで全ての設定が完了。ブラウザでアクセスすると下図のようにBootswatchのテーマが適用された画面が表示される。</p><br>
+<p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="./application.scss_files/20150806220545.png" alt="f:id:wonder-wall:20150806220545p:plain" title="f:id:wonder-wall:20150806220545p:plain" class="hatena-fotolife" itemprop="image"></span></p><br>
+<p>テーマを変えたくなったら、テーマ名が記述してる下記2行を別のテーマ名に変更する。<br>
+図はテーマを<code>Cerulean</code>から<code>Darkly</code>に変更した結果。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">　…
+<span class="synComment">@import</span> <span class="synConstant">"bootswatch/darkly/variables"</span>;
+　…
+<span class="synComment">@import</span> <span class="synConstant">"bootswatch/darkly/bootswatch"</span>;
+　…
+</pre><p><br>
+<span itemscope="" itemtype="http://schema.org/Photograph"><img src="./application.scss_files/20150806220600.png" alt="f:id:wonder-wall:20150806220600p:plain" title="f:id:wonder-wall:20150806220600p:plain" class="hatena-fotolife" itemprop="image"></span></p><p></p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774165166/motasaiko-22/"><img src="./application.scss_files/51gar5P8bEL._SL160_.jpg" class="hatena-asin-detail-image" alt="パーフェクト Ruby on Rails" title="パーフェクト Ruby on Rails"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774165166/motasaiko-22/">パーフェクト Ruby on Rails</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> すがわらまさのり,前島真一,近藤宇智朗,橋立友宏</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%B5%BB%BD%D1%C9%BE%CF%C0%BC%D2">技術評論社</a></li><li><span class="hatena-asin-detail-label">発売日:</span> 2014/06/06</li><li><span class="hatena-asin-detail-label">メディア:</span> 大型本</li><li><a href="http://d.hatena.ne.jp/asin/4774165166/motasaiko-22" target="_blank">この商品を含むブログ (8件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div><p></p>
+
+</div>
+    
+
+  
+<div id="my-footer">
+<script async="" src="./application.scss_files/f(2).txt"></script>
+<!-- unit02 -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-4207209214165713" data-ad-slot="3202413221" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:680px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:680px;background-color:transparent;"><iframe width="680" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:680px;height:60px;" src="./application.scss_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+
+    
+  <footer class="entry-footer">
+    
+    <p class="entry-footer-section">
+  <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="wonder-wall"><span class="user-name-nickname">もた</span> <span class="user-name-paren">(</span><span class="user-name-hatena-id">id:wonder-wall</span><span class="user-name-paren">)</span></span></span>
+  <span class="entry-footer-time"><a href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517"><time data-relative="" datetime="2015-08-08T05:05:17Z" title="2015-08-08T05:05:17Z" pubdate="" class="updated">3年前</time></a></span>
+</p>
+
+    
+  <div class="hatena-star-container">
+  <span class="hatena-star-comment-container"><img src="./application.scss_files/comment.gif" tabindex="0" alt="Comments" title="Comments" class="hatena-star-comment-button" style="cursor: pointer; margin: 0px; padding: 0px; border: none; vertical-align: middle; display: none;"></span><span class="hatena-star-star-container"><img src="./application.scss_files/hatena-star-add-button.svg" tabindex="0" alt="Add Star" title="Add Star" class="hatena-star-add-button" style="cursor: pointer; margin: 0px 3px; padding: 0px; border: none; vertical-align: middle;"></span></div>
+  <div class="hatena-star-metadata" style="display: none">
+    <a class="hatena-star-permalink" href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517">Railsメモ(5) : Bootswatch(Bootstrap)で見た目を変更する</a>
+  </div>
+
+
+    
+<div class="social-buttons">
+  
+  
+    <div class="social-button-item">
+      <iframe class="hatena-bookmark-button-frame" title="この記事をはてなブックマークに追加" frameborder="0" scrolling="no" width="84" height="40" src="javascript:false" style="width: 84px; height: 40px;" src="./application.scss_files/saved_resource(3).html"></iframe>
+    </div>
+  
+  
+    <div class="social-button-item">
+      <div class="fb-share-button fb_iframe_widget" data-layout="box_count" data-href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=719729204785177&amp;container_width=0&amp;href=https%3A%2F%2Fwonderwall.hatenablog.com%2Fentry%2F2015%2F08%2F08%2F140517&amp;layout=box_count&amp;locale=ja_JP&amp;sdk=joey"><span style="vertical-align: bottom; width: 61px; height: 40px;"><iframe name="f1939aeb1700af" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:share_button Facebook Social Plugin" src="./application.scss_files/share_button.html" style="border: none; visibility: visible; width: 61px; height: 40px;" class=""></iframe></span></div>
+    </div>
+  
+  
+    <div class="social-button-item">
+      <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 75px; height: 20px;" title="Twitter Tweet Button" src="./application.scss_files/tweet_button.704fca4914c9b90d7a9d41abcaa19933.ja.html" data-url="https://wonderwall.hatenablog.com/entry/2015/08/08/140517"></iframe>
+    </div>
+  
+  
+  
+  
+  
+    <div class="social-button-item">
+      <div class="pocket-btn"><iframe width="60" height="63" id="pocket-button-0" frameborder="0" allowtransparency="true" scrolling="NO" src="./application.scss_files/button.html"></iframe></div>
+    </div>
+  
+</div>
+
+    
+
+    <div class="customized-footer">
+      
+
+        
+
+        
+
+          <div class="entry-footer-modules" id="entry-footer-secondary-modules">      
+<div class="hatena-module hatena-module-related-entries">
+      
+  <!-- Hatena-Epic-has-related-entries-with-elasticsearch:true -->
+  <div class="hatena-module-title">
+    関連記事
+  </div>
+  <div class="hatena-module-body">
+    <ul class="related-entries hatena-urllist urllist-with-thumbnails">
+  
+  
+    
+    <li class="urllist-item related-entries-item">
+      <div class="urllist-item-inner related-entries-item-inner">
+        
+                      <a class="urllist-image-link related-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/03/29/001500">
+  <img alt="Djangoメモ(29) : migrateでモデルに閲覧数カウント用のフィールドを追加" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180326_20180326232011.png" class="urllist-image related-entries-image" title="Djangoメモ(29) : migrateでモデルに閲覧数カウント用のフィールドを追加" width="100">
+</a>
+            <div class="urllist-date-link related-entries-date-link">
+  <a href="https://wonderwall.hatenablog.com/archive/2018/03/29" rel="nofollow">
+    <time pubdate="" datetime="2018-03-28T15:15:00Z" title="2018-03-28T15:15:00Z">
+      2018-03-29
+    </time>
+  </a>
+</div>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/03/29/001500" class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">Djangoメモ(29) : migrateでモデルに閲覧数カウント用のフィールドを追加</a>
+
+
+          
+          
+
+                      <div class="urllist-entry-body related-entries-entry-body">モデルにフィールド追加 migrateコマンド実行 ビュー、テンプレ…</div>
+      </div>
+    </li>
+  
+    
+    <li class="urllist-item related-entries-item">
+      <div class="urllist-item-inner related-entries-item-inner">
+        
+                      <a class="urllist-image-link related-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/03/25/180000">
+  <img alt="Djangoメモ(25) : login_requiredデコレータでビューをログイン済みユーザーのみに制限" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180325_20180325141352.png" class="urllist-image related-entries-image" title="Djangoメモ(25) : login_requiredデコレータでビューをログイン済みユーザーのみに制限" width="100">
+</a>
+            <div class="urllist-date-link related-entries-date-link">
+  <a href="https://wonderwall.hatenablog.com/archive/2018/03/25" rel="nofollow">
+    <time pubdate="" datetime="2018-03-25T09:00:00Z" title="2018-03-25T09:00:00Z">
+      2018-03-25
+    </time>
+  </a>
+</div>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/03/25/180000" class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">Djangoメモ(25) : login_requiredデコレータでビューをログイン済みユーザーの…</a>
+
+
+          
+          
+
+                      <div class="urllist-entry-body related-entries-entry-body">login_requiredデコレータ ログイン後のリダイレクト先 login_r…</div>
+      </div>
+    </li>
+  
+    
+    <li class="urllist-item related-entries-item">
+      <div class="urllist-item-inner related-entries-item-inner">
+        
+                      <a class="urllist-image-link related-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/03/08/223000">
+  <img alt="Djangoメモ(8) : テンプレートを使った表示" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180308_20180308110956.png" class="urllist-image related-entries-image" title="Djangoメモ(8) : テンプレートを使った表示" width="100">
+</a>
+            <div class="urllist-date-link related-entries-date-link">
+  <a href="https://wonderwall.hatenablog.com/archive/2018/03/08" rel="nofollow">
+    <time pubdate="" datetime="2018-03-08T13:30:00Z" title="2018-03-08T13:30:00Z">
+      2018-03-08
+    </time>
+  </a>
+</div>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/03/08/223000" class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">Djangoメモ(8) : テンプレートを使った表示</a>
+
+
+          
+          
+
+                      <div class="urllist-entry-body related-entries-entry-body">ビューを編集 テンプレートを作成 テンプレート言語 変数 タグ …</div>
+      </div>
+    </li>
+  
+    
+    <li class="urllist-item related-entries-item">
+      <div class="urllist-item-inner related-entries-item-inner">
+        
+                      <a class="urllist-image-link related-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/03/05/233000">
+  <img alt="Djangoメモ(4) : 掲示板アプリのモデルを作成" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180305_20180305203751.png" class="urllist-image related-entries-image" title="Djangoメモ(4) : 掲示板アプリのモデルを作成" width="100">
+</a>
+            <div class="urllist-date-link related-entries-date-link">
+  <a href="https://wonderwall.hatenablog.com/archive/2018/03/05" rel="nofollow">
+    <time pubdate="" datetime="2018-03-05T14:30:00Z" title="2018-03-05T14:30:00Z">
+      2018-03-05
+    </time>
+  </a>
+</div>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/03/05/233000" class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">Djangoメモ(4) : 掲示板アプリのモデルを作成</a>
+
+
+          
+          
+
+                      <div class="urllist-entry-body related-entries-entry-body">掲示板アプリのモデル モデルの作成 migrateでモデルを有効にす…</div>
+      </div>
+    </li>
+  
+    
+    <li class="urllist-item related-entries-item">
+      <div class="urllist-item-inner related-entries-item-inner">
+        
+                      <a class="urllist-image-link related-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2016/06/22/211951">
+  <img alt="気分転換にDracula Themeを使ってみる(Vim, Zsh, iTerm)" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20160924_20160924001450.png" class="urllist-image related-entries-image" title="気分転換にDracula Themeを使ってみる(Vim, Zsh, iTerm)" width="100">
+</a>
+            <div class="urllist-date-link related-entries-date-link">
+  <a href="https://wonderwall.hatenablog.com/archive/2016/06/22" rel="nofollow">
+    <time pubdate="" datetime="2016-06-22T12:19:51Z" title="2016-06-22T12:19:51Z">
+      2016-06-22
+    </time>
+  </a>
+</div>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2016/06/22/211951" class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">気分転換にDracula Themeを使ってみる(Vim, Zsh, iTerm)</a>
+
+
+          
+          
+
+                      <div class="urllist-entry-body related-entries-entry-body">draculatheme.com気分転換にカラーテーマを変更しようとしてい…</div>
+      </div>
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+  </div>
+        
+  <div class="entry-footer-html">
+<script>
+var myFooter=document.getElementById("my-footer");
+var temp=myFooter.cloneNode(true);
+myFooter.parentNode.removeChild(myFooter);
+document.getElementsByClassName("entry-content")[0].appendChild(temp);
+</script></div>
+
+
+      
+    </div>
+    
+
+  </footer>
+
+  </div>
+</article>
+
+      
+      
+    
+  
+
+  
+  <!-- rakuten_ad_target_end -->
+  <!-- google_ad_section_end -->
+  
+  
+  
+  <div class="pager pager-permalink permalink">
+    
+      
+      <span class="pager-prev">
+        <a href="https://wonderwall.hatenablog.com/entry/2015/08/08/190310" rel="prev">
+          <span class="pager-arrow">« </span>
+          Railsメモ(6) : Nokogiriでスクレイピング…
+        </a>
+      </span>
+    
+    
+      
+      <span class="pager-next">
+        <a href="https://wonderwall.hatenablog.com/entry/2015/08/08/084454" rel="next">
+          Railsメモ(4) : コントローラとビューを作…
+          <span class="pager-arrow"> »</span>
+        </a>
+      </span>
+    
+  </div>
+
+
+  
+
+
+
+        </div>
+      </div>
+
+      <aside id="box1">
+  <div id="box1-inner">
+  </div>
+</aside>
+
+    </div><!-- #wrapper -->
+
+    
+<aside id="box2">
+  
+  <div id="box2-inner">
+    
+      
+
+<div class="hatena-module hatena-module-profile">
+  <div class="hatena-module-title">
+    プロフィール
+  </div>
+  <div class="hatena-module-body">
+    
+    <a href="https://wonderwall.hatenablog.com/about" class="profile-icon-link">
+      <img src="./application.scss_files/profile.png" alt="id:wonder-wall" class="profile-icon">
+    </a>
+    
+
+    
+    <span class="id">
+      <a href="https://wonderwall.hatenablog.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="wonder-wall"><span class="user-name-nickname">もた</span> <span class="user-name-paren">(</span><span class="user-name-hatena-id">id:wonder-wall</span><span class="user-name-paren">)</span></span></a>
+      
+  
+    
+    
+      <a href="http://blog.hatena.ne.jp/guide/pro" title="はてなブログPro"><i class="badge-type-pro">はてなブログPro</i></a>
+    
+  
+
+
+    </span>
+    
+
+    
+
+    
+
+    
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
+
+  <a href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517#" class="hatena-follow-button js-hatena-follow-button unsubscribing">
+    <span class="subscribing">
+      <span class="foreground">読者です</span>
+      <span class="background">読者をやめる</span>
+    </span>
+    <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once="">
+      <span class="foreground">読者になる</span>
+      <span class="background">読者になる</span>
+    </span>
+  </a>
+  <div class="subscription-count-box js-subscription-count-box" style="display: block;">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">105</span>
+  </div>
+</div>
+
+    
+
+    
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-search-box">
+  <div class="hatena-module-title">
+    検索
+  </div>
+  <div class="hatena-module-body">
+    <form class="search-form" role="search" action="https://wonderwall.hatenablog.com/search" method="get">
+  <input type="text" name="q" class="search-module-input" value="" placeholder="記事を検索" required="">
+  <input type="submit" value="検索" class="search-module-button">
+</form>
+
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-entries-access-ranking" data-count="5" data-source="total_bookmark" data-enable_customize_format="0" data-display_entry_category="0" data-display_entry_image="1" data-display_entry_image_size_width="100" data-display_entry_image_size_height="100" data-display_entry_body_length="0" data-display_entry_date="0" data-display_entry_title_length="20" data-restrict_entry_title_length="0" data-display_bookmark_count="1">
+  <div class="hatena-module-title">
+    
+      <a href="http://b.hatena.ne.jp/entrylist?url=https%3A%2F%2Fwonderwall.hatenablog.com%2F&amp;sort=count">注目記事</a>
+    
+  </div>
+  <div class="hatena-module-body">
+    
+  <ul class="entries-access-ranking hatena-urllist urllist-with-thumbnails">
+  
+  
+    
+    <li class="urllist-item entries-access-ranking-item rank-1">
+      <div class="urllist-item-inner entries-access-ranking-item-inner">
+        
+                      <a class="urllist-image-link entries-access-ranking-image-link" href="https://wonderwall.hatenablog.com/entry/2017/08/16/115236">
+  <img alt="Linuxメモ : topの代わりとして使えそうなコマンド（glances, ctop, gtop, htop, vtop, cpustat）を試してみる" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20170816_20170816101542.png" class="urllist-image entries-access-ranking-image" title="Linuxメモ : topの代わりとして使えそうなコマンド（glances, ctop, gtop, htop, vtop, cpustat）を試してみる" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2017/08/16/115236" class="urllist-title-link entries-access-ranking-title-link  urllist-title entries-access-ranking-title">Linuxメモ : topの代わりとして使えそうなコマンド（glances, ctop, gtop, htop, vtop, cpustat）を試してみる</a>
+
+
+                      <a href="http://b.hatena.ne.jp/entry/https://wonderwall.hatenablog.com/entry/2017/08/16/115236" class="bookmark-widget-counter">
+  <img src="./application.scss_files/115236" alt="はてなブックマーク - Linuxメモ : topの代わりとして使えそうなコマンド（glances, ctop, gtop, htop, vtop, cpustat）を試してみる">
+</a>
+
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item entries-access-ranking-item rank-2">
+      <div class="urllist-item-inner entries-access-ranking-item-inner">
+        
+                      <a class="urllist-image-link entries-access-ranking-image-link" href="https://wonderwall.hatenablog.com/entry/2018/07/25/213000">
+  <img alt="CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180725_20180725201850.png" class="urllist-image entries-access-ranking-image" title="CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/07/25/213000" class="urllist-title-link entries-access-ranking-title-link  urllist-title entries-access-ranking-title">CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）</a>
+
+
+                      <a href="http://b.hatena.ne.jp/entry/https://wonderwall.hatenablog.com/entry/2018/07/25/213000" class="bookmark-widget-counter">
+  <img src="./application.scss_files/213000" alt="はてなブックマーク - CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）">
+</a>
+
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item entries-access-ranking-item rank-3">
+      <div class="urllist-item-inner entries-access-ranking-item-inner">
+        
+                      <a class="urllist-image-link entries-access-ranking-image-link" href="https://wonderwall.hatenablog.com/entry/2017/08/01/083000">
+  <img alt="commandlinefu.comで見つけた便利・面白Linuxコマンド使用例" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20170730_20170730203010.png" class="urllist-image entries-access-ranking-image" title="commandlinefu.comで見つけた便利・面白Linuxコマンド使用例" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2017/08/01/083000" class="urllist-title-link entries-access-ranking-title-link  urllist-title entries-access-ranking-title">commandlinefu.comで見つけた便利・面白Linuxコマンド使用例</a>
+
+
+                      <a href="http://b.hatena.ne.jp/entry/https://wonderwall.hatenablog.com/entry/2017/08/01/083000" class="bookmark-widget-counter">
+  <img src="./application.scss_files/083000" alt="はてなブックマーク - commandlinefu.comで見つけた便利・面白Linuxコマンド使用例">
+</a>
+
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item entries-access-ranking-item rank-4">
+      <div class="urllist-item-inner entries-access-ranking-item-inner">
+        
+                      <a class="urllist-image-link entries-access-ranking-image-link" href="https://wonderwall.hatenablog.com/entry/2017/08/07/222350">
+  <img alt="Linuxメモ : 「exa」Rustで書かれたカラフルなls代替コマンドを試す" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20170807_20170807210302.png" class="urllist-image entries-access-ranking-image" title="Linuxメモ : 「exa」Rustで書かれたカラフルなls代替コマンドを試す" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2017/08/07/222350" class="urllist-title-link entries-access-ranking-title-link  urllist-title entries-access-ranking-title">Linuxメモ : 「exa」Rustで書かれたカラフルなls代替コマンドを試す</a>
+
+
+                      <a href="http://b.hatena.ne.jp/entry/https://wonderwall.hatenablog.com/entry/2017/08/07/222350" class="bookmark-widget-counter">
+  <img src="./application.scss_files/222350" alt="はてなブックマーク - Linuxメモ : 「exa」Rustで書かれたカラフルなls代替コマンドを試す">
+</a>
+
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item entries-access-ranking-item rank-5">
+      <div class="urllist-item-inner entries-access-ranking-item-inner">
+        
+                      <a class="urllist-image-link entries-access-ranking-image-link" href="https://wonderwall.hatenablog.com/entry/2017/07/24/162040">
+  <img alt="Pythonメモ : better-exceptionsで例外情報を見やすくする" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20170724_20170724160321.png" class="urllist-image entries-access-ranking-image" title="Pythonメモ : better-exceptionsで例外情報を見やすくする" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2017/07/24/162040" class="urllist-title-link entries-access-ranking-title-link  urllist-title entries-access-ranking-title">Pythonメモ : better-exceptionsで例外情報を見やすくする</a>
+
+
+                      <a href="http://b.hatena.ne.jp/entry/https://wonderwall.hatenablog.com/entry/2017/07/24/162040" class="bookmark-widget-counter">
+  <img src="./application.scss_files/162040" alt="はてなブックマーク - Pythonメモ : better-exceptionsで例外情報を見やすくする">
+</a>
+
+          
+
+                </div>
+    </li>
+  
+</ul>
+</div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+  <div class="hatena-module-body">
+    <script async="" src="./application.scss_files/f(2).txt"></script>
+<!-- -->
+<ins class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-4207209214165713" data-ad-slot="6149453848" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:280px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:280px;background-color:transparent;"><iframe width="280" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:280px;height:250px;" src="./application.scss_files/saved_resource(4).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-recent-entries ">
+  <div class="hatena-module-title">
+    <a href="https://wonderwall.hatenablog.com/archive">
+      最新記事
+    </a>
+  </div>
+  <div class="hatena-module-body">
+    <ul class="recent-entries hatena-urllist urllist-with-thumbnails">
+  
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2019/02/25/224719">
+  <img alt="Vimメモ : GitHub Trendingで見かけるカラースキーム" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20190225_20190225224004.png" class="urllist-image recent-entries-image" title="Vimメモ : GitHub Trendingで見かけるカラースキーム" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2019/02/25/224719" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">Vimメモ : GitHub Trendingで見かけるカラースキーム</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/07/25/213000">
+  <img alt="CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180725_20180725201850.png" class="urllist-image recent-entries-image" title="CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/07/25/213000" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">CSVの処理で使えそうなコマンドラインツール（column, textql, csvkit, xsv, visidata, csvtotable, daff, tabview）</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://wonderwall.hatenablog.com/entry/2018/07/22/231500">
+  <img alt="JSONの処理で使えそうなコマンドラインツール（json.tool, jo, jq, jid, gron, jp, json-server, json2csv, jsondiffpatch）" src="./application.scss_files/https___cdn-ak.f.st-hatena.com_images_fotolife_w_wonder-wall_20180722_20180722230128.png" class="urllist-image recent-entries-image" title="JSONの処理で使えそうなコマンドラインツール（json.tool, jo, jq, jid, gron, jp, json-server, json2csv, jsondiffpatch）" width="100">
+</a>
+
+          <a href="https://wonderwall.hatenablog.com/entry/2018/07/22/231500" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">JSONの処理で使えそうなコマンドラインツール（json.tool, jo, jq, jid, gron, jp, json-server, json2csv, jsondiffpatch）</a>
+
+
+          
+          
+
+                </div>
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+    
+      
+
+<div class="hatena-module hatena-module-category">
+  <div class="hatena-module-title">
+    カテゴリー
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Python">
+            Python (75)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Vim">
+            Vim (42)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Django">
+            Django (40)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Ruby%20on%20Rails">
+            Ruby on Rails (33)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/%E4%BE%BF%E5%88%A9%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">
+            便利コマンド (30)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Linux">
+            Linux (21)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Zsh">
+            Zsh (17)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/tmux">
+            tmux (11)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90">
+            データ分析 (10)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Git">
+            Git (8)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/English">
+            English (5)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Mac">
+            Mac (5)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/PostgreSQL">
+            PostgreSQL (4)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/GitHub">
+            GitHub (4)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Kindle">
+            Kindle (3)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Security">
+            Security (1)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Music">
+            Music (1)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/Movie">
+            Movie (1)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://wonderwall.hatenablog.com/archive/category/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86">
+            画像処理 (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      
+
+<div class="hatena-module hatena-module-archive" data-archive-type="default" data-archive-url="https://wonderwall.hatenablog.com/archive">
+  <div class="hatena-module-title">
+    <a href="https://wonderwall.hatenablog.com/archive">月別アーカイブ</a>
+  </div>
+  <div class="hatena-module-body">
+  
+
+  
+    
+    
+      <ul class="hatena-urllist">
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2019">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://wonderwall.hatenablog.com/archive/2019" class="archive-module-year-title">
+              2019 (1)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2019/2" class="archive-module-month-title">
+                    2019 / 2 (1)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2018">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://wonderwall.hatenablog.com/archive/2018" class="archive-module-year-title">
+              2018 (48)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2018/7" class="archive-module-month-title">
+                    2018 / 7 (3)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2018/4" class="archive-module-month-title">
+                    2018 / 4 (8)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2018/3" class="archive-module-month-title">
+                    2018 / 3 (31)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2018/2" class="archive-module-month-title">
+                    2018 / 2 (6)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2017">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://wonderwall.hatenablog.com/archive/2017" class="archive-module-year-title">
+              2017 (55)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/11" class="archive-module-month-title">
+                    2017 / 11 (1)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/10" class="archive-module-month-title">
+                    2017 / 10 (5)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/9" class="archive-module-month-title">
+                    2017 / 9 (9)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/8" class="archive-module-month-title">
+                    2017 / 8 (18)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/7" class="archive-module-month-title">
+                    2017 / 7 (13)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/3" class="archive-module-month-title">
+                    2017 / 3 (1)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/2" class="archive-module-month-title">
+                    2017 / 2 (6)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2017/1" class="archive-module-month-title">
+                    2017 / 1 (2)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year archive-module-year-hidden" data-year="2016">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://wonderwall.hatenablog.com/archive/2016" class="archive-module-year-title">
+              2016 (61)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/10" class="archive-module-month-title">
+                    2016 / 10 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/9" class="archive-module-month-title">
+                    2016 / 9 (9)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/7" class="archive-module-month-title">
+                    2016 / 7 (6)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/6" class="archive-module-month-title">
+                    2016 / 6 (14)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/5" class="archive-module-month-title">
+                    2016 / 5 (1)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/4" class="archive-module-month-title">
+                    2016 / 4 (8)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2016/3" class="archive-module-month-title">
+                    2016 / 3 (21)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="archive-module-year" data-year="2015">
+            <div class="archive-module-button">
+              <span class="archive-module-hide-button">▼</span>
+              <span class="archive-module-show-button">▶</span>
+            </div>
+            <a href="https://wonderwall.hatenablog.com/archive/2015" class="archive-module-year-title">
+              2015 (33)
+            </a>
+            <ul class="archive-module-months">
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2015/9" class="archive-module-month-title">
+                    2015 / 9 (2)
+                  </a>
+                </li>
+              
+                <li class="archive-module-month">
+                  <a href="https://wonderwall.hatenablog.com/archive/2015/8" class="archive-module-month-title">
+                    2015 / 8 (31)
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      </ul>
+    
+  
+
+
+</div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">Amazon</div>
+  <div class="hatena-module-body">
+    <script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="motasaiko-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="275"; amzn_assoc_height ="600"; amzn_assoc_default_search_category ="Books"; amzn_assoc_default_search_key ="Python";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="./application.scss_files/q"></script><div id="amzn_assoc_ad_div_adunit_0"><style type="text/css">#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget,#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget *{margin:0;padding:0;border:0;font-size:12px;font:inherit;vertical-align:middle;font-family:arial,verdana,helvetica,sans-serif;position:relative;color:#333}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget{width:99%;height:auto;display:inline-block;text-align:left;vertical-align:middle}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection{position:absolute;right:10px;top:25px;z-index:1000;padding:5px 0;margin:2px 0 0;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175);-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);background-clip:padding-box}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items{display:block;width:200px;height:230px;overflow-y:scroll;list-style:none}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items::-webkit-scrollbar{-webkit-appearance:none;width:7px}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items::-webkit-scrollbar-thumb{border-radius:4px;background-color:rgba(0,0,0,.5);-webkit-box-shadow:0 0 1px rgba(255,255,255,.5)}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li{cursor:pointer;display:list-item;text-align:left;text-align:-webkit-match-parent;list-style:none;font-size:13px;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li:after,#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li:before{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li.current{background:#eee}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li.outline{background:#f8f8f8}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-category-selection ul.__ma-sw-category-items li:hover{color:#262626;background-color:#f8f8f8}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-suggestion-wrapper{width:99%;position:absolute;z-index:9999;top:68px;text-align:left}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-autcomplete{background:#fff;display:none;width:100%;height:auto;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:0 0 4px 4px;box-shadow:0 6px 12px rgba(0,0,0,.175);-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);background-clip:padding-box}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-autcomplete .__ma-sw-suggestion{padding:3px 5px;font-size:12px;color:#333}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-autcomplete .__ma-sw-suggestion .cat-wrapper{color:#a9a9a9;cursor:default}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-autcomplete .__ma-sw-suggestion:last-child{border-radius:0 0 4px 4px}#__mobileAssociatesSearchWidget_adunit_0.__mobile-associates-search-widget .__ma-sw-autcomplete .__ma-sw-suggestion.selected{background:#eee;border:0}</style> <div id="__mobileAssociatesSearchWidget_adunit_0" class="__mobile-associates-search-widget" style="width: 280px;"> <div class="__ma-sw-category-selection" style="display: none;"> <ul class="__ma-sw-category-items"> <li data-value="aps" data-search="All" data-index="0">Amazon.co.jp</li><li data-value="amazontv" data-search="VideoDownload" data-index="1">Amazonビデオ</li><li data-value="stripbooks" data-search="Books" data-index="2" class="current">本</li><li data-value="automotive" data-search="Automotive" data-index="3">カー＆バイク用品</li><li data-value="hobby" data-search="Hobbies" data-index="4">ホビー</li><li data-value="english-books" data-search="ForeignBooks" data-index="5">洋書</li><li data-value="classical" data-search="Classical" data-index="6">クラシックミュージック</li><li data-value="electronics" data-search="Electronics" data-index="7">カメラ</li><li data-value="fe-industrial-jp" data-search="Industrial" data-index="8">産業・研究開発用品</li><li data-value="office-products" data-search="OfficeProducts" data-index="9">文房具・オフィス用品</li><li data-value="kitchen" data-search="Kitchen" data-index="10">ホーム＆キッチン</li><li data-value="diy" data-search="HomeImprovement" data-index="11">DIY・工具</li><li data-value="mobile-apps" data-search="MobileApps" data-index="12">Androidアプリ</li><li data-value="popular" data-search="Music" data-index="13">ミュージック</li><li data-value="mi" data-search="MusicalInstruments" data-index="14">楽器</li><li data-value="dvd" data-search="DVD" data-index="15">DVD</li><li data-value="software" data-search="Software" data-index="16">PCソフト</li><li data-value="videogames" data-search="VideoGames" data-index="17">TVゲーム</li><li data-value="toys" data-search="Toys" data-index="18">おもちゃ</li><li data-value="sporting" data-search="SportingGoods" data-index="19">スポーツ</li><li data-value="hpc" data-search="HealthPersonalCare" data-index="20">ドラッグストア・ビューティー</li><li data-value="beauty" data-search="Beauty" data-index="21">コスメ</li><li data-value="food-beverage" data-search="Grocery" data-index="22">食品＆飲料</li><li data-value="watch" data-search="Watches" data-index="23">時計</li><li data-value="jewelry" data-search="Jewelry" data-index="24">ジュエリー</li><li data-value="baby" data-search="Baby" data-index="25">ベビー&amp;マタニティ</li><li data-value="apparel" data-search="Apparel" data-index="26">服＆ファッション小物</li><li data-value="shoes" data-search="Shoes" data-index="27">シューズ&amp;バッグ</li><li data-value="pets" data-search="PetSupplies" data-index="28">ペット用品</li><li data-value="computers" data-search="PCHardware" data-index="29">パソコン・周辺機器</li><li data-value="digital-music" data-search="MP3Downloads" data-index="30">デジタルミュージック</li><li data-value="fe-appliances-jp" data-search="Appliances" data-index="31">大型家電</li><li data-value="digital-text" data-search="KindleStore" data-index="32">Kindle ストア</li><li data-value="food-beverage" data-search="Grocery" data-index="33">お酒</li></ul> </div> <div class="__ma-sw-suggestion-wrapper"> <div style="padding: 0 15px; width:auto; border: none"> <div class="__ma-sw-autcomplete" style="display: none;"> </div> </div> </div> <div style="display: none;"> <form class="__ma-sw-search-form"> <select class="__ma-sw-search-category"><option selected="" value="aps">Amazon.co.jp</option> <option value="amazontv">Amazonビデオ</option> <option value="stripbooks">本</option> <option value="automotive">カー＆バイク用品</option> <option value="hobby">ホビー</option> <option value="english-books">洋書</option> <option value="classical">クラシックミュージック</option> <option value="electronics">カメラ</option> <option value="fe-industrial-jp">産業・研究開発用品</option> <option value="office-products">文房具・オフィス用品</option> <option value="kitchen">ホーム＆キッチン</option> <option value="diy">DIY・工具</option> <option value="mobile-apps">Androidアプリ</option> <option value="popular">ミュージック</option> <option value="mi">楽器</option> <option value="dvd">DVD</option> <option value="software">PCソフト</option> <option value="videogames">TVゲーム</option> <option value="toys">おもちゃ</option> <option value="sporting">スポーツ</option> <option value="hpc">ドラッグストア・ビューティー</option> <option value="beauty">コスメ</option> <option value="food-beverage">食品＆飲料</option> <option value="watch">時計</option> <option value="jewelry">ジュエリー</option> <option value="baby">ベビー&amp;マタニティ</option> <option value="apparel">服＆ファッション小物</option> <option value="shoes">シューズ&amp;バッグ</option> <option value="pets">ペット用品</option> <option value="computers">パソコン・周辺機器</option> <option value="digital-music">デジタルミュージック</option> <option value="fe-appliances-jp">大型家電</option> <option value="digital-text">Kindle ストア</option> <option value="food-beverage">お酒</option></select> <select name="select2" class="__ma-sw-search-term"><option value="All">Amazon.co.jp</option><option value="VideoDownload">Amazonビデオ</option><option value="Books">本</option><option value="Automotive">カー＆バイク用品</option><option value="Hobbies">ホビー</option><option value="ForeignBooks">洋書</option><option value="Classical">クラシックミュージック</option><option value="Electronics">カメラ</option><option value="Industrial">産業・研究開発用品</option><option value="OfficeProducts">文房具・オフィス用品</option><option value="Kitchen">ホーム＆キッチン</option><option value="HomeImprovement">DIY・工具</option><option value="MobileApps">Androidアプリ</option><option value="Music">ミュージック</option><option value="MusicalInstruments">楽器</option><option value="DVD">DVD</option><option value="Software">PCソフト</option><option value="VideoGames">TVゲーム</option><option value="Toys">おもちゃ</option><option value="SportingGoods">スポーツ</option><option value="HealthPersonalCare">ドラッグストア・ビューティー</option><option value="Beauty">コスメ</option><option value="Grocery">食品＆飲料</option><option value="Watches">時計</option><option value="Jewelry">ジュエリー</option><option value="Baby">ベビー&amp;マタニティ</option><option value="Apparel">服＆ファッション小物</option><option value="Shoes">シューズ&amp;バッグ</option><option value="PetSupplies">ペット用品</option><option value="PCHardware">パソコン・周辺機器</option><option value="MP3Downloads">デジタルミュージック</option><option value="Appliances">大型家電</option><option value="KindleStore">Kindle ストア</option><option value="Grocery">お酒</option></select> </form> </div> <iframe width="100%" height="602px" src="./application.scss_files/q.html" style="border: none;"></iframe></div></div>
+  </div>
+</div>
+
+    
+    
+  </div>
+</aside>
+
+
+  </div>
+</div>
+
+
+
+
+        
+
+        
+
+      </div>
+    </div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./application.scss_files/saved_resource(5).html"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_2118023011780" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./application.scss_files/saved_resource(6).html"></iframe>
+    
+
+    
+  <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script><script id="pocket-btn-js" src="./application.scss_files/btn.js"></script>
+
+
+    
+  <script src="./application.scss_files/HatenaStar.js"></script>
+
+
+    
+      <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./application.scss_files/vy-MhgbfL4v.html" style="border: none;"></iframe></div><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=719729204785177&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    
+    
+
+<div class="quote-box" style="top: 1829px; left: 10px; display: none;">
+  <div class="tooltip-quote tooltip-quote-star" style="display: block;">
+    <i class="blogicon-star" title="引用スターをつける"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-stock" style="display: block;">
+    <i class="blogicon-quote" title="引用をストック"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet available" style="display: block;">
+    <a class="js-tweet-quote" target="_blank" data-track-name="quote-tweet" data-track-once="" href="https://twitter.com/share?url=https%3A%2F%2Fwonderwall.hatenablog.com%2Fentry%2F2015%2F08%2F08%2F140517&amp;text=%E2%80%9C%2F%2F+%22bootstrap-sprockets%22+must+be+imported+before+%22bootstrap%22+and+%22bootstrap%2Fvariables%22%0A%40import+%22bootstrap-sprockets%22%3B%0A%40import+%22bootstrap%22%3B%E2%80%9D"><i class="blogicon-twitter" title="引用してツイートする"></i></a>
+  </div>
+</div>
+
+<div class="message-box" id="quote-star-message-box" style="display: none; position: absolute;">
+  スターをつけました
+</div>
+
+<div class="quote-stock-panel" id="quote-stock-message-box" style="position: absolute; z-index: 3000">
+  <div class="message-box" id="quote-stock-succeeded-message" style="display: none">
+    <p>引用をストックしました</p>
+    <button class="btn btn-primary" id="quote-stock-show-editor-button" data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="message-box" id="quote-login-required-message" style="display: none">
+    <p>引用するにはまずログインしてください</p>
+    <button class="btn btn-primary" id="quote-login-button">ログイン</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="quote-stock-failed-message" style="display: none">
+    <p>引用をストックできませんでした。再度お試しください</p>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="unstockable-quote-message-box" style="display: none; position: absolute; z-index: 3000;">
+    <p>限定公開記事のため引用できません。</p>
+  </div>
+</div>
+
+<script type="x-underscore-template" id="js-requote-button-template">
+  <div class="requote-button js-requote-button">
+    <button class="requote-button-btn tipsy-top" title="引用する"><i class="blogicon-quote"></i></button>
+  </div>
+</script>
+
+
+
+    
+    <div id="hidden-subscribe-button" style="display: none;">
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
+
+  <a href="https://wonderwall.hatenablog.com/entry/2015/08/08/140517#" class="hatena-follow-button js-hatena-follow-button unsubscribing">
+    <span class="subscribing">
+      <span class="foreground">読者です</span>
+      <span class="background">読者をやめる</span>
+    </span>
+    <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once="">
+      <span class="foreground">読者になる</span>
+      <span class="background">読者になる</span>
+    </span>
+  </a>
+  <div class="subscription-count-box js-subscription-count-box" style="display: block;">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">105</span>
+  </div>
+</div>
+
+    </div>
+
+    
+  <script type="text/javascript" src="./application.scss_files/widgets.js"></script>
+
+<script src="./application.scss_files/platform.js" async="" defer="" gapi_processed="true">
+  { lang: 'ja', "parsetags": "explicit" }
+</script>
+<script type="text/javascript" src="./application.scss_files/bookmark_button.js" charset="utf-8" async="async"></script>
+
+
+
+  <script type="text/javascript" src="./application.scss_files/react-with-addons.min.js"></script>
+  <script type="text/javascript" src="./application.scss_files/react-dom.min.js"></script>
+
+
+<script type="text/javascript" src="./application.scss_files/jquery.min.js"></script>
+<script type="text/javascript" src="./application.scss_files/jquery-ui.1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="./application.scss_files/jquery.flot.js"></script>
+<script type="text/javascript" src="./application.scss_files/jquery.flot.time.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="./application.scss_files/texts-ja.js"></script>
+<script id="hatenablog-js" data-env="production" type="text/javascript" src="./application.scss_files/hatenablog.js" crossorigin="anonymous"></script><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; display: none;"></div>
+
+
+  <script type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
+
+
+<script src="./application.scss_files/api.js" async="" defer=""></script>
+
+
+
+
+    
+
+    
+
+
+
+
+
+  
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./application.scss_files/widget_iframe.704fca4914c9b90d7a9d41abcaa19933.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div style="top: -9999px; z-index: -9999;"></div><div style="color: rgb(0, 0, 0); position: absolute; display: none; z-index: 10002; left: 0px; top: 0px; background-color: rgb(255, 255, 255); border: 0px; padding: 0px; text-align: center;"><div style="text-align: left; margin: 0px; padding: 0px;"></div></div></body><iframe id="google_shimpl" style="display: none;" src="./application.scss_files/saved_resource(7).html"></iframe><iframe id="google_esf" name="google_esf" src="./application.scss_files/zrt_lookup.html" data-ad-client="ca-pub-4207209214165713" style="display: none;"></iframe></html>
