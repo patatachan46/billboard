@@ -1,6 +1,6 @@
 Name
 ====
-もた日記
+billboardランキング
 
 
 ## Description
