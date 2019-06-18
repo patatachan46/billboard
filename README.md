@@ -1,24 +1,12 @@
-# README
+Name
+====
+もた日記
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Description
+Ruby on Railsの学習で使用したサイト。<br>
 
-* Ruby version
+サイト名：　 　もた日記</br>
+サイトURL： 　https://wonderwall.hatenablog.com/entry/2015/08/05/233041</br>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+内容：　Ruby on Railsを使って簡単なbillboardランキングを検索できるようなアプリを作成。
